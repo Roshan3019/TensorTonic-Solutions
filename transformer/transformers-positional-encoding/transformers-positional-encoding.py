@@ -19,22 +19,4 @@ def positional_encoding(seq_length: int, d_model: int) -> np.ndarray:
     pe[:, 1::2] = np.cos(position * div_term)
 
     return pe
-
-
-
-
-    
-    pos = 0
-    index = (d_model / 2) - 1
-    dim_list = []
-    seq_dim = []
-    for i in range(seq_length):
-        pos = seq_length
-        for j in range(index):
-            exp_val = (2*index)/d_model
-            internal_cal = pos/(10000^exp_val)
-            PE_sin = np.sin(internal_cal)
-            PE_cos = np.cos(internal_cal)
-            dim_list.append(PE_sin, PE_cos)
-        seq_dim.append(dim_list)
     
